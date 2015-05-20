@@ -1,14 +1,38 @@
 #! /usr/bin/env node
 
 var shell = require("shelljs")
+var argv = process.argv.slice(2)
 var yargs = require("yargs")
+var logSymbols = require("log-symbols")
 
-shell.exec("sh bin/stat")
 
-var argv = yargs.usage("Raspberry Pi Command Line Interface.")
-  .command("camera", "do sth", function (yargs) {
+// eg:
+var network = require('../commands/network')
+
+!argv.length && shell.exec("sh bin/stat")
+
+yargs.usage("Raspberry Pi Command Line Interface.")
+  .command("network", "display useful network info.", function (yargs) {
+
+    network.isOnline(function (err, online) {
+
+      console.log(online ? logSymbols.success + ' Online' : logSymbols.error + ' Offline')
+      console.log(logSymbols.info + ' internal-ip: ' + network.internalIp())
+
+      network.publicIp(function (err, ip) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(logSymbols.info + ' public-ip: ' + ip)
+      })
+    })
+
+
   })
-  .command("ip", "do sth", function (yargs) {
+  .command("camera", "todo", function (yargs) {
+  })
+  .command("ip", "todo", function (yargs) {
   })
   .demand(1, "must provide a valid command")
   .help("h")
