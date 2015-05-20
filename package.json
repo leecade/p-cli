@@ -1,0 +1,26 @@
+{
+  "name": "rpi-cli",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "p": "bin/p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leecade/rpi-cli.git"
+  },
+  "author": "leecade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leecade/rpi-cli/issues"
+  },
+  "homepage": "https://github.com/leecade/rpi-cli#readme",
+  "dependencies": {
+    "shelljs": "^0.5.0",
+    "yargs": "^3.9.1"
+  }
+}

@@ -1,0 +1,16 @@
+#! /usr/bin/env node
+
+var shell = require("shelljs")
+var yargs = require("yargs")
+
+shell.exec("sh bin/stat")
+
+var argv = yargs.usage("Raspberry Pi Command Line Interface.")
+  .command("camera", "do sth", function (yargs) {
+  })
+  .command("ip", "do sth", function (yargs) {
+  })
+  .demand(1, "must provide a valid command")
+  .help("h")
+  .alias("h", "help")
+  .argv
