@@ -23,9 +23,9 @@
     "each-async": "^1.1.1",
     "log-symbols": "^1.0.2",
     "native-dns": "^0.7.0",
-    "onetime": "^1.0.0",
+    "onetime": "^2.0.0",
     "p-client": "^1.0.0",
-    "shelljs": "^0.5.0",
-    "yargs": "^3.9.1"
+    "shelljs": "^0.7.5",
+    "yargs": "^6.3.0"
   }
 }
